@@ -1,0 +1,22 @@
+{
+  "name": "zappyride-event-database-full-stack",
+  "version": "1.0.0",
+  "description": "Back-end_RAD_Event_API_and_Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaC213/ZappyRide-Event-Database-Full-Stack.git"
+  },
+  "author": "Andrea Chang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaC213/ZappyRide-Event-Database-Full-Stack/issues"
+  },
+  "homepage": "https://github.com/AndreaC213/ZappyRide-Event-Database-Full-Stack#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
