@@ -1,10 +1,10 @@
-# **ZappyRide-Event-Database-Full-Stack**
+# **ZappyRide Full-Stack Engineer Skill Assessment**
 
-## **ZappyRide Full-Stack Engineer Skill Assessment**
+### **Ride-and-drive-Event-Database-Full-Stack**
 
 Amazon Web Services (AWS) infrastructure, back-end development with Lambda, and front-end development (React.JS).
 
-## **(1) Infrastructure & Back-end: RAD Event API and Database**
+## **1. Infrastructure & Back-end: RAD Event API and Database**
 The goal of this first part is to build a simple publicly accessible REST API with one endpoint named:
 **/events**
 
@@ -30,8 +30,9 @@ Tasks:
 * Connect your Lambda function(s) to the RDS database where the events table is stored
 * Use the AWS API Gateway to create the REST endpoint for public access and connect the endpoint to Lambda
 
-## (2) Front-end Development
+## **2. Front-end Development**
 Please build a simple front-end that accesses your newly built API, sketched as follows:
+![Front-end sketch](images/front-end-sketch.png)
 
 Tasks:
 * Build the front-end as a one-page app using ReactJS, scaffolded with npm / react-create-app
