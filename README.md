@@ -32,7 +32,7 @@ Tasks:
 
 ### **2. Front-end Development**
 Please build a simple front-end that accesses your newly built API, sketched as follows:
-![Front-end sketch](images/front-end-sketch.png)
+![Front-end sketch](Back-end_RAD_Event_API_and_Database/images/front-end-sketch.png)
 
 Tasks:
 * Build the front-end as a one-page app using ReactJS, scaffolded with npm / react-create-app
