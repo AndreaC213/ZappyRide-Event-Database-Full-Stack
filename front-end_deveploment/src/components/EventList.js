@@ -24,13 +24,11 @@ class PostList extends Component {
 	}
 
 	render() {
-		const { event, errorMsg } = this.state
+		const { events, errorMsg } = this.state
 		return (
 			<div>
 				Here are the events in the database:
-				{event.length
-					? event.map(event => <div key={event.id}>{event.title}</div>)
-          : null}
+				{events.length ? events.map(event => <div key={event.EventID}>{event.organizer}</div>): null}
         {errorMsg ? <div>{errorMsg}</div> : null}
 			</div>
 		)

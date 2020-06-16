@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-class PostForm extends Component {
+class EventForm extends Component {
 	constructor(props) {
 		super(props)
 
@@ -64,4 +64,4 @@ class PostForm extends Component {
 	}
 }
 
-export default PostForm
+export default EventForm;
