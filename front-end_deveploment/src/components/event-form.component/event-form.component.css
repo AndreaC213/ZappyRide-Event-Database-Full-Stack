@@ -23,21 +23,12 @@
   }
 }
 
-.table {
-  margin: 0 auto;
+.inputForm {
+  margin: 10px 30px;
   width: 100%;
   display: table;
 }
 
-.column-name {
-  display: table-row;
-}
-
-.column-name.header {
-  font-weight: 900;
-  color:black;
-  background:white;
-}
 
 @media screen and (max-width: 580px) {
   .column-name {
@@ -76,7 +67,7 @@
   }
 }
 
-.buttonColor {
+.customButton {
   background-color: orange;
   color: black;
   margin: 10px 30px;

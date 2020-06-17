@@ -32,20 +32,49 @@ class PostList extends Component {
 		// console.log(events)
 		return (
 
-			<div>
+			<table>
 				<h3>Welcome to the Ride-and Event Database!</h3>
 				<p>Here are the events in the database:</p>
-				<div class="table-container"> 
+				<div class="wrapper"> 
 					<div class="table">
-					<div class="column-name">
+						<div class="row header">
+							<div class="cell">Organizer</div>
+							<div class="cell">Venue</div>
+							<div class="cell">Data</div>
+						</div>
+					<div class="row">
 						{events.length ? events.map(item => 
-							<div class="data" key={item.id}>
+							<div 
+								class="cell"
+								data-title="Organizer"
+								key={item.id}
+							>
 								{item.organizer}
 							</div>
 						): null}
 					</div>
-					<div class="column-name ">{events.length ? events.map(item => <div key={item.id}>{item.venue}</div>): null}</div>
-					<div class="column-name">{events.length ? events.map(item => <div key={item.id}>{item.eventDate}</div>): null}</div>
+					<div class="row">
+						{events.length ? events.map(item => 
+							<div 
+							class="cell"
+							data-title="Venue"
+							key={item.id}
+							> 
+								{item.venue}
+							</div>
+						): null}
+					</div>
+					<div class="row">
+						{events.length ? events.map(item => 
+							<div 
+								class="cell"
+								data-title="Date"
+								key={item.id}
+							>
+								{item.eventdate}
+							</div>
+						): null}
+					</div>
 					{errorMsg ? <div>{errorMsg}</div> : null}
 					</div>
 				</div>
@@ -53,7 +82,7 @@ class PostList extends Component {
 					class="buttonColor"
 					onClick={() => window.location.reload(false)}>Refresh / Read
 				</button>
-			</div>
+			</table>
 
 
 		)

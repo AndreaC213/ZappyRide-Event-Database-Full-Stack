@@ -6,27 +6,16 @@
   float: left;
 }
 
-.left{
-  margin: 10px 30px;
-  float: left;
-} 
-
 @media screen and (max-width: 580px) {
   body {
     font-size: 16px;
   }
 }
 
-.table-container {
+.wrapper {
   margin: 0 auto;
   padding: 10px;
   max-width: 800px;
-}
-
-@media screen and (max-width: 580px) {
-  .table {
-    display: block;
-  }
 }
 
 .table {
@@ -35,48 +24,53 @@
   display: table;
 }
 
-.column-name {
+@media screen and (max-width: 580px) {
+  .table {
+    display: flex;
+  }
+}
+
+.row {
   display: table-row;
 }
 
-.column-name.header {
+.row.header {
   font-weight: 900;
   color:black;
   background:white;
 }
 
 @media screen and (max-width: 580px) {
-  .column-name {
+  .row {
     padding: 14px 0 7px;
   }
 
-  .column-name {
+  .row.header {
     padding: 0;
     height: 6px;
   }
 
-  .column-name .data {
+  .row .data {
     margin-bottom: 10px;
   }
 
-  .column-name .data:before {
+  .row .cell:before {
     margin-bottom: 3px;
     content: attr(data-title);
     min-width: 98px;
+    line-height: 10px;
     font-weight: bold;
-    text-transform: uppercase;
-    color: #969696;
     display: block;
   }
 }
 
-.data {
+.cell {
   padding: 6px 12px;
   display: table-cell;
 }
 
 @media screen and (max-width: 580px) {
-  .data {
+  .cell {
     padding: 2px 16px;
     display: block;;
   }
@@ -97,5 +91,9 @@ h3 {
 p {
   margin: 10px 30px;
 	float: left;
+}
+
+td{
+  border:1px solid #ccc;
 }
 

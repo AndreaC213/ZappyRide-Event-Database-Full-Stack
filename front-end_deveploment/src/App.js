@@ -7,8 +7,12 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<EventList />
-				<EventForm />
+				<div>
+          <EventList />   
+        </div>
+        <div>
+          <EventForm />
+        </div>
 			</div>
 		)
 	}
