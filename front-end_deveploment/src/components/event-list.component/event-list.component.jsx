@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+
+
 import axios from 'axios'
 
 import './event-list.component.css';
 
-class PostList extends Component {
+class PostList extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -32,57 +34,57 @@ class PostList extends Component {
 		// console.log(events)
 		return (
 
-			<table>
+			<div>
 				<h3>Welcome to the Ride-and Event Database!</h3>
 				<p>Here are the events in the database:</p>
-				<div class="wrapper"> 
-					<div class="table">
-						<div class="row header">
-							<div class="cell">Organizer</div>
-							<div class="cell">Venue</div>
-							<div class="cell">Data</div>
-						</div>
-					<div class="row">
-						{events.length ? events.map(item => 
-							<div 
-								class="cell"
-								data-title="Organizer"
+				<table striped bordered hover> 
+					<thead>
+						<tr>
+							<th><p>Organizer</p></th>
+							<th><p>Venue</p></th>
+							<th><p>Date</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{events.length ? events.map(item => 
+								<td
+									key={item.id}
+								>
+									{item.organizer}
+								</td>
+							): null}
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							{events.length ? events.map(item => 
+								<td
 								key={item.id}
-							>
-								{item.organizer}
-							</div>
-						): null}
-					</div>
-					<div class="row">
-						{events.length ? events.map(item => 
-							<div 
-							class="cell"
-							data-title="Venue"
-							key={item.id}
-							> 
-								{item.venue}
-							</div>
-						): null}
-					</div>
-					<div class="row">
-						{events.length ? events.map(item => 
-							<div 
-								class="cell"
-								data-title="Date"
-								key={item.id}
-							>
-								{item.eventdate}
-							</div>
-						): null}
-					</div>
+								> 
+									{item.venue}
+								</td>
+							): null}
+						</tr>	
+					</tbody>
+					<tbody>
+						<tr>
+							{events.length ? events.map(item => 
+								<td
+									key={item.id}
+								>
+									{item.eventdate}
+								</td>
+							): null}
+						</tr>
+					</tbody>
 					{errorMsg ? <div>{errorMsg}</div> : null}
-					</div>
-				</div>
+				</table>
 				<button 
 					class="buttonColor"
 					onClick={() => window.location.reload(false)}>Refresh / Read
 				</button>
-			</table>
+			</div>
 
 
 		)

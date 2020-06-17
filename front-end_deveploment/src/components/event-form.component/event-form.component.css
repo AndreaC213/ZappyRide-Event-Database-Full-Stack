@@ -1,70 +1,7 @@
-.body{
-  font-family: Arial, Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: black;
-  background-color: white;
-  float: left;
-}
-
-.left{
-  margin: 10px 30px;
-  float: left;
-} 
-
-.table-container {
-  margin: 0 auto;
-  padding: 10px;
-  max-width: 800px;
-}
-
-@media screen and (max-width: 580px) {
-  .table {
-    display: block;
-  }
-}
-
 .inputForm {
   margin: 10px 30px;
   width: 100%;
   display: table;
-}
-
-
-@media screen and (max-width: 580px) {
-  .column-name {
-    padding: 14px 0 7px;
-  }
-
-  .column-name {
-    padding: 0;
-    height: 6px;
-  }
-
-  .column-name .data {
-    margin-bottom: 10px;
-  }
-
-  .column-name .data:before {
-    margin-bottom: 3px;
-    content: attr(data-title);
-    min-width: 98px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #969696;
-    display: block;
-  }
-}
-
-.data {
-  padding: 6px 12px;
-  display: table-cell;
-}
-
-@media screen and (max-width: 580px) {
-  .data {
-    padding: 2px 16px;
-    display: block;;
-  }
 }
 
 .customButton {
@@ -74,15 +11,14 @@
 	float: left;
 }
 
-h3 {
+h3, h4 {
   margin: 10px 30px;
 	text-align: left;
 }
 
-p {
+p span{
   margin: 10px 30px;
-	float: left;
+  float: left;
+  display: block;
 }
-
-
 

@@ -37,8 +37,12 @@ class EventForm extends Component {
 		const { organizer, venue, eventdate } = this.state
 		return (
 			<div>
+
+				<p><span><h4>Add Event</h4></span></p>
+
 				<form onSubmit={this.submitHandler}>
 					<div class="inputForm">
+					<span>Organizer: </span>
 						<input
 							type="text"
 							name="organizer"
@@ -47,6 +51,7 @@ class EventForm extends Component {
 						/>
 					</div>
 					<div class="inputForm">
+					<span>Venue: </span>
 						<input
 							type="text"
 							name="venue"
@@ -54,7 +59,9 @@ class EventForm extends Component {
 							onChange={this.changeHandler}
 						/>
 					</div>
+					
 					<div class="inputForm">
+						<span>Date: </span>
 						<input
 							type="text"
 							name="eventdate"
