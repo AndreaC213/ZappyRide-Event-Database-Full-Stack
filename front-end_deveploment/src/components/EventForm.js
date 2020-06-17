@@ -7,12 +7,13 @@ class EventForm extends Component {
 		this.state = {
 			organizer: '',
 			venue: '',
-			eventDate: ''
+			eventdate: ''
 		}
 	}
 
 	changeHandler = e => {
-		this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value })
+    console.log({[e.target.name]: e.target.value})
 	}
 
 	submitHandler = e => {
@@ -29,7 +30,7 @@ class EventForm extends Component {
 	}
 
 	render() {
-		const { organizer, venue, eventDate } = this.state
+		const { organizer, venue, eventdate } = this.state
 		return (
 			<div>
 				<form onSubmit={this.submitHandler}>
@@ -52,8 +53,8 @@ class EventForm extends Component {
 					<div>
 						<input
 							type="text"
-							name="eventDate"
-							value={eventDate}
+							name="eventdate"
+							value={eventdate}
 							onChange={this.changeHandler}
 						/>
 					</div>
