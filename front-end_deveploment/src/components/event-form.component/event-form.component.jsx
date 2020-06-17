@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+
+import './event-form.component.css';
+
 class EventForm extends Component {
 	constructor(props) {
 		super(props)
@@ -26,7 +29,8 @@ class EventForm extends Component {
 			})
 			.catch(error => {
 				// console.log(error)
-			})
+      })
+      this.setState({	organizer: '', venue: '', eventdate: '' })
 	}
 
 	render() {
@@ -58,7 +62,11 @@ class EventForm extends Component {
 							onChange={this.changeHandler}
 						/>
 					</div>
-					<button type="submit">Submit</button>
+					<button 
+						class="buttonColor"
+						type="submit">
+							Submit
+						</button>
 				</form>
 			</div>
 		)
