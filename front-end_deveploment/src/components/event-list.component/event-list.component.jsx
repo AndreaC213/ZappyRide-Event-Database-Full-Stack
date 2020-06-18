@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, { Fragment } from "react";
 
 import axios from 'axios'
 
@@ -10,7 +9,7 @@ class PostList extends React.Component {
 		super(props)
 
 		this.state = {
-      events: [],
+      eventList: [],
       errorMsg: ''
 		}
 	}
@@ -20,7 +19,7 @@ class PostList extends React.Component {
 			.get('https://boee9mqtbe.execute-api.us-east-1.amazonaws.com/dev/events')
 			.then(response => {
 				console.log(response)
-				this.setState({ events: response.data.response })
+				this.setState({ eventList: response.data.response })
 				
 			})
 			.catch(error => {
@@ -30,53 +29,29 @@ class PostList extends React.Component {
 	}
 
 	render() {
-		const { events, errorMsg } = this.state
+		const { eventList, errorMsg } = this.state
 		// console.log(events)
 		return (
 
 			<div>
 				<h3>Welcome to the Ride-and Event Database!</h3>
 				<p>Here are the events in the database:</p>
-				<table striped bordered hover> 
+				<table> 
 					<thead>
 						<tr>
-							<th><p>Organizer</p></th>
-							<th><p>Venue</p></th>
-							<th><p>Date</p></th>
+							<th>Organizer</th>
+							<th>Venue</th>
+							<th>Date</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							{events.length ? events.map(item => 
-								<td
-									key={item.id}
-								>
-									{item.organizer}
-								</td>
-							): null}
-						</tr>
-					</tbody>
-					<tbody>
-						<tr>
-							{events.length ? events.map(item => 
-								<td
-								key={item.id}
-								> 
-									{item.venue}
-								</td>
-							): null}
-						</tr>	
-					</tbody>
-					<tbody>
-						<tr>
-							{events.length ? events.map(item => 
-								<td
-									key={item.id}
-								>
-									{item.eventdate}
-								</td>
-							): null}
-						</tr>
+					{eventList.length ? eventList.map(item => 
+							<tr key={item.id}>
+								<td >{item.organizer}</td>
+								<td>{item.venue}</td>
+								<td>{item.eventdate}</td>
+							</tr>
+						): null}
 					</tbody>
 					{errorMsg ? <div>{errorMsg}</div> : null}
 				</table>

@@ -16,38 +16,11 @@ p {
 }
 
 table {
-  width: 70%;
-  border-collapse:collapse;
+  border-collapse: collapse;
 }
 
-td{
-  margin: 0;
+td, th {
+  border: 1px solid #999;
   padding: 0.5rem;
-  border-bottom: 0 ;
-  border-right: 1px solid black;
-}
-
-
-th {
-  margin: 0;
-  padding: 0.5rem;
-  border-bottom: 0 ;
-  border-right: 1px solid black;
-}
-
-tr {
-  margin: 0;
-  padding: 0.5rem;
-  border-bottom: 0 ;
-  border-right: 1px solid black;
-}
-
-thead {
-
-  border:1px solid black;
-}
-
-tbody {
-  display: inline-table;
-  border:1px solid black;
+  text-align: left;
 }
