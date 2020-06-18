@@ -34,9 +34,6 @@ class PostList extends React.Component {
 		return (
 
 			<div>
-				<h1>Welcome to the Ride-and Event Database!</h1>
-				<h3>Here are the events in the database:</h3>
-
 				<div class="container">
 					<table> 
 						<thead>
@@ -49,7 +46,7 @@ class PostList extends React.Component {
 						<tbody>
 						{eventList.length ? eventList.map(item => 
 								<tr key={item.id}>
-									<td >{item.organizer}</td>
+									<td>{item.organizer}</td>
 									<td>{item.venue}</td>
 									<td>{item.eventdate}</td>
 								</tr>

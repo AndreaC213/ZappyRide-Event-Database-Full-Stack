@@ -37,45 +37,52 @@ class EventForm extends Component {
 		const { organizer, venue, eventdate } = this.state
 		return (
 			<div>
-
-				<h3>Add Event</h3>
 				<div class="container">
 					<form onSubmit={this.submitHandler}>
-						<div>
-						<span>Organizer: </span>
-							<input
-								type="text"
-								name="organizer"
-								value={organizer}
-								onChange={this.changeHandler}
-							/>
-						</div>
-						<div>
-						<span>Venue: </span>
-							<input
-								type="text"
-								name="venue"
-								value={venue}
-								onChange={this.changeHandler}
-							/>
-						</div>
-						
-						<div>
-							<span>Date: </span>
-							<input
-								type="text"
-								name="eventdate"
-								value={eventdate}
-								onChange={this.changeHandler}
-							/>
-						</div>
+						<table>
+							<tbody>
+								<td class="nonBorder">
+									<tr>Organizer:</tr>
+									<tr>Venue:</tr>
+									<tr>Date:</tr>
+								</td>
+								<td class="nonBorder">
+									<tr class="nonBorder">
+										<input
+											type="text"
+											name="organizer"
+											value={organizer}
+											onChange={this.changeHandler}
+										/>
+									</tr>
+									<tr class="nonBorder">
+										<input
+											type="text"
+											name="venue"
+											value={venue}
+											onChange={this.changeHandler}
+										/>
+									</tr>
+									<tr >
+										<input
+											type="text"
+											name="eventdate"
+											value={eventdate}
+											onChange={this.changeHandler}
+										/>
+									</tr>
+								</td>
+							</tbody>
+						</table>
 					</form>
 				</div>
-				<button 
-					class="customButton"
-					type="submit">
-						Submit
+				<div>
+					<button 
+						class="customButton"
+						type="submit">
+							Submit
 					</button>
+				</div>
 			</div>
 		)
 	}

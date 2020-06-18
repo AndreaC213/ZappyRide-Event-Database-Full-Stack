@@ -2,23 +2,31 @@
   padding: 5px;
   background-color: orange;
   color: black;
-  margin: 10px 30px;
+  margin: 0px 30px;
   display: flex;
   flex-direction: column;
 }
 
-h3, h4 {
-  margin: 10px 30px;
-	text-align: left;
-}
-
 .container {  
-  padding: 10px 30px;
+  padding: 5px 30px;
   display: flex;
   flex-direction: column;
   height: 20vh;
 }
 
-.item {
-  padding: 10px;
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  text-align: left;
+
+}
+
+.nonBorder {
+  border: none;
+}
+
+.buttonSpace {
+  
 }
