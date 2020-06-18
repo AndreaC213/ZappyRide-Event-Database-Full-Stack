@@ -1,14 +1,10 @@
-.inputForm {
-  margin: 10px 30px;
-  width: 100%;
-  display: table;
-}
-
 .customButton {
+  padding: 5px;
   background-color: orange;
   color: black;
   margin: 10px 30px;
-	float: left;
+  display: flex;
+  flex-direction: column;
 }
 
 h3, h4 {
@@ -16,9 +12,13 @@ h3, h4 {
 	text-align: left;
 }
 
-p span{
-  margin: 10px 30px;
-  float: left;
-  display: block;
+.container {  
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
 }
 
+.item {
+  padding: 10px;
+}

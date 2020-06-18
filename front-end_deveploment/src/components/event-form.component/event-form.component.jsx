@@ -38,43 +38,44 @@ class EventForm extends Component {
 		return (
 			<div>
 
-				<p><span><h4>Add Event</h4></span></p>
-
-				<form onSubmit={this.submitHandler}>
-					<div class="inputForm">
-					<span>Organizer: </span>
-						<input
-							type="text"
-							name="organizer"
-							value={organizer}
-							onChange={this.changeHandler}
-						/>
-					</div>
-					<div class="inputForm">
-					<span>Venue: </span>
-						<input
-							type="text"
-							name="venue"
-							value={venue}
-							onChange={this.changeHandler}
-						/>
-					</div>
-					
-					<div class="inputForm">
-						<span>Date: </span>
-						<input
-							type="text"
-							name="eventdate"
-							value={eventdate}
-							onChange={this.changeHandler}
-						/>
-					</div>
-					<button 
-						class="buttonColor"
-						type="submit">
-							Submit
-						</button>
-				</form>
+				<h3>Add Event</h3>
+				<div class="container">
+					<form onSubmit={this.submitHandler}>
+						<div>
+						<span>Organizer: </span>
+							<input
+								type="text"
+								name="organizer"
+								value={organizer}
+								onChange={this.changeHandler}
+							/>
+						</div>
+						<div>
+						<span>Venue: </span>
+							<input
+								type="text"
+								name="venue"
+								value={venue}
+								onChange={this.changeHandler}
+							/>
+						</div>
+						
+						<div>
+							<span>Date: </span>
+							<input
+								type="text"
+								name="eventdate"
+								value={eventdate}
+								onChange={this.changeHandler}
+							/>
+						</div>
+					</form>
+				</div>
+				<button 
+					class="customButton"
+					type="submit">
+						Submit
+					</button>
 			</div>
 		)
 	}

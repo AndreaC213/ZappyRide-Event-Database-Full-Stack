@@ -34,29 +34,33 @@ class PostList extends React.Component {
 		return (
 
 			<div>
-				<h3>Welcome to the Ride-and Event Database!</h3>
-				<p>Here are the events in the database:</p>
-				<table> 
-					<thead>
-						<tr>
-							<th>Organizer</th>
-							<th>Venue</th>
-							<th>Date</th>
-						</tr>
-					</thead>
-					<tbody>
-					{eventList.length ? eventList.map(item => 
-							<tr key={item.id}>
-								<td >{item.organizer}</td>
-								<td>{item.venue}</td>
-								<td>{item.eventdate}</td>
+				<h1>Welcome to the Ride-and Event Database!</h1>
+				<h3>Here are the events in the database:</h3>
+
+				<div class="container">
+					<table> 
+						<thead>
+							<tr>
+								<th>Organizer</th>
+								<th>Venue</th>
+								<th>Date</th>
 							</tr>
-						): null}
-					</tbody>
-					{errorMsg ? <div>{errorMsg}</div> : null}
-				</table>
+						</thead>
+						<tbody>
+						{eventList.length ? eventList.map(item => 
+								<tr key={item.id}>
+									<td >{item.organizer}</td>
+									<td>{item.venue}</td>
+									<td>{item.eventdate}</td>
+								</tr>
+							): null}
+						</tbody>
+						{errorMsg ? <div>{errorMsg}</div> : null}
+					</table>
+				</div>
+				
 				<button 
-					class="buttonColor"
+					class="customButton"
 					onClick={() => window.location.reload(false)}>Refresh / Read
 				</button>
 			</div>
