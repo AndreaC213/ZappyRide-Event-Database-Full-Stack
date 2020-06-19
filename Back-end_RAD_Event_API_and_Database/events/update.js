@@ -15,30 +15,44 @@ exports.handler = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false; 
   
   // get the dynamic parameters from the routing input
-  // passing the default value to 
-  // prevent the error 'Internal server error' for
-  // cannot destructure property 'undefind' or 'null'
-  const id = event.queryStringParameters.EventID || 1;
-  const Organizer = event.queryStringParameters.Organizer|| "Plug In America";
-  const Venue = event.queryStringParameters.Venue|| "New York Auto Show";
-  const EventDate = event.queryStringParameters.EventDate|| "June 1, 2020";
+  // pathParameters for id
+  // queryStringParameters for request body
+  const id = event.pathParameters.id;
+  
+  const body = JSON.parse(event.body)
+  
+  const organizer = body.organizer;
+  const venue = body.venue;
+  const eventdate = body.eventdate;
+  console.log 
 
   // create the MySQL query for updating data in MySQL from Node.js
-  const sql = `UPDATE EventsTable SET Organizer= ?, Venue= ?, EventDate= ? WHERE EventID = ?`; 
-  
-  db.query(sql, [`${Organizer}`, `${Venue}`, `${EventDate}`, `${id}`], function (err, result) {   
+
+  const sql = `UPDATE EventsTable SET organizer= ?, venue= ?, eventdate= ? WHERE id = ?`; 
+
+  db.query(sql, [organizer, venue, eventdate, id], function (err, res) {   
     if (err) throw err; 
     
     // check the output is matching 
     // the id we pass in, for  
     // updating it with the new values (development purpose)
-    console.log('Update EventID : ' + `${id}` + ', Organizer : ' + `${Organizer}` + ', Venue : ' + `${Venue}` + ', EventDate : ' + `${EventDate}`);
+    console.log(res)
+    const response = {
+      id : id,
+      organizer : body.organizer,
+      venue : body.venue,
+      eventdate: body.eventdate
+    };
+    // response 'id' = Number(event.pathParameters.id);
+    // response['organizer'] = event.organizer;
+    // response['venue'] = event.venue;
+    // response['eventdate'] = event.eventdate;
     
     // have to return the status code and the body with 'response' for 
     // configuring it with GatewayAPI
     callback(null,{
       statusCode: 200,
-      body: JSON.stringify({response: result})
+      body: JSON.stringify(response)
     });
   });
 }; 

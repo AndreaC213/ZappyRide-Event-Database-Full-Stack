@@ -20,6 +20,13 @@ exports.handler = (event, context, callback) => {
     if (err) throw err;     
     callback(null,{
       statusCode: 200,
+      headers: {
+        'Access-Control-Expose-Headers': 'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Credentials': true,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': "OPTIONS,POST,GET"
+      },
       body: JSON.stringify({response: res})
     });
   });

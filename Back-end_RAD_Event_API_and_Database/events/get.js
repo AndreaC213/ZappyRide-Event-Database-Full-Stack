@@ -12,20 +12,18 @@ exports.handler = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false; 
 
   // get the dynamic parameters from the routing input
-  // passing the default value to 
-  // prevent the error 'Internal server error' for
-  // cannot destructure property 'undefind' or 'null'
-  const id = event.queryStringParameters.EventID || 1;
+  const id = Number(event.pathParameters.id);
+  console.log(id)
   
   // create the MySQL query for getting data in MySQL from Node.js
-  const sql = `SELECT * FROM EventsTable WHERE EventID = ${id}`; 
+  const sql = "SELECT * FROM EventsTable WHERE id =" + id; 
   
   db.query(sql, function (err, res) {   
     if (err) throw err;
     
     // check the output id is matching 
     // the id we pass in (development purpose)
-    console.log('Event Id:' + `${id}`);
+    console.log(event);
     
     callback(null,{
       statusCode: 200,
