@@ -34,7 +34,7 @@ class PostList extends React.Component {
 		return (
 
 			<div>
-				<div class="container">
+				<div className="container">
 					<table> 
 						<thead>
 							<tr>
@@ -57,7 +57,7 @@ class PostList extends React.Component {
 				</div>
 				
 				<button 
-					class="customButton"
+					className="customButton"
 					onClick={() => window.location.reload(false)}>Refresh / Read
 				</button>
 			</div>

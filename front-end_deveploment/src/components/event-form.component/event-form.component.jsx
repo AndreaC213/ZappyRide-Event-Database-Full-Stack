@@ -14,78 +14,31 @@ class EventForm extends Component {
 		}
 	}
 
-	changeHandler = e => {
-    this.setState({ [e.target.name]: e.target.value })
-    // console.log({[e.target.name]: e.target.value})
-	}
-
-	submitHandler = e => {
-		e.preventDefault()
-		// console.log(this.state)
-		axios
-			.post('https://boee9mqtbe.execute-api.us-east-1.amazonaws.com/dev/events', this.state)
-			.then(response => {
-				console.log(response)
-			})
-			.catch(error => {
-				console.log(error)
+	submit() {
+    console.log(this.state)
+    let url="https://boee9mqtbe.execute-api.us-east-1.amazonaws.com/dev/events";
+    let data = this.state;
+    fetch(url,{
+      method: 'POST',
+      crossDomain: true,
+      body:JSON.stringify(data)
+    }).then((result) => {
+      result.json().then((response) => {
+        console.warn("response", response)
       })
-      this.setState({	organizer: '', venue: '', eventdate: '' })
-	}
+    })
+  }
 
-	render() {
-		const { organizer, venue, eventdate } = this.state
-		return (
-			<div>
-				<div class="container">
-					<form onSubmit={this.submitHandler}>
-						<table>
-							<tbody>
-								<td class="nonBorder">
-									<tr>Organizer:</tr>
-									<tr>Venue:</tr>
-									<tr>Date:</tr>
-								</td>
-								<td class="nonBorder">
-									<tr class="nonBorder">
-										<input
-											type="text"
-											name="organizer"
-											value={organizer}
-											onChange={this.changeHandler}
-										/>
-									</tr>
-									<tr class="nonBorder">
-										<input
-											type="text"
-											name="venue"
-											value={venue}
-											onChange={this.changeHandler}
-										/>
-									</tr>
-									<tr >
-										<input
-											type="text"
-											name="eventdate"
-											value={eventdate}
-											onChange={this.changeHandler}
-										/>
-									</tr>
-								</td>
-							</tbody>
-						</table>
-					</form>
-				</div>
-				<div>
-					<button 
-						class="customButton"
-						type="submit">
-							Submit
-					</button>
-				</div>
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div>
+        <input type="text" value={(this.state.organizer)} name="organizer" onChange={( data )=>{ this.setState({organizer:data.target.value}) }} /> <br /> <br /> 
+        <input type="text" value={(this.state.venue)} name="venue" onChange={( data )=>{ this.setState({venue:data.target.value}) }} /> <br /> <br />
+        <input type="text" value={(this.state.eventdate)} name="eventdate" onChange={( data )=>{ this.setState({eventdate:data.target.value}) }} /> <br /> <br />
+        <button onClick={() => { this.submit() }}>Add</button>
+      </div>
+    )
+  }
 }
 
 export default EventForm;
