@@ -7,7 +7,7 @@ class App extends Component {
 	render() {
 		return (
       
-			<div className="App">
+			<div>
         <h1>Welcome to the Ride-and Event Database!</h1>
 				<h3>Here are the events in the database:</h3>
         <div><EventList/></div>

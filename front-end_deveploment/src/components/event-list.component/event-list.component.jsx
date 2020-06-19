@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import axios from 'axios'
 
@@ -54,12 +54,16 @@ class EventList extends React.Component {
 						</tbody>
 						{errorMsg ? <div>{errorMsg}</div> : null}
 					</table>
+					<div>
+						<button 
+							className="customButton"
+							onClick={() => window.location.reload(false)}>Refresh / Read
+						</button>
+					</div>
+
 				</div>
 				
-				<button 
-					className="customButton"
-					onClick={() => window.location.reload(false)}>Refresh / Read
-				</button>
+
 			</div>
 
 

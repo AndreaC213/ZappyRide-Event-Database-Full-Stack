@@ -2,7 +2,7 @@
   padding: 5px;
   background-color: orange;
   color: black;
-  margin: 0px 30px;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -14,19 +14,19 @@
   height: 20vh;
 }
 
-table {
-  border-collapse: collapse;
+.aligned_form {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  height: 30px;
 }
 
-td, th {
-  text-align: left;
-
+label {
+  order: 1;
+  width: 5em;
+  padding-right: 0.5em;
 }
 
-.nonBorder {
-  border: none;
-}
-
-.buttonSpace {
-  
+input{
+  order: 2;
 }

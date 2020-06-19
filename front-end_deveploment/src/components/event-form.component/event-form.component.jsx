@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 
 import './event-form.component.css';
 
-class EventForm extends Component {
+class EventForm extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -35,27 +35,33 @@ class EventForm extends Component {
 	render() {
 		const { organizer, venue, eventdate } = this.state
 		return (
-			<div>
+			<div className="container">
 				<form onSubmit={this.submitHandler}>
-					<div>
+					<div className="aligned_form">
+						<label for="text1">Organizer:</label>	
 						<input
 							type="text"
+							id="text1"
 							name="organizer"
 							value={organizer}
 							onChange={this.changeHandler}
 						/>
 					</div>
-					<div>
+					<div className="aligned_form">
+						<label for="text1">Venue:</label>	
 						<input
 							type="text"
+							id="text2"
 							name="venue"
 							value={venue}
 							onChange={this.changeHandler}
 						/>
 					</div>
-					<div>
+					<div className="aligned_form">
+						<label for="text1">Eventdate:</label>	
 						<input
 							type="text"
+							id="text2"
 							name="eventdate"
 							value={eventdate}
 							onChange={this.changeHandler}
