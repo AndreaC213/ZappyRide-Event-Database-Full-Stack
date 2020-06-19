@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import './event-list.component.css';
 
-class PostList extends React.Component {
+class EventList extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -67,4 +67,4 @@ class PostList extends React.Component {
 	}
 }
 
-export default PostList
+export default EventList
