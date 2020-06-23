@@ -7,12 +7,14 @@ class App extends Component {
 	render() {
 		return (
       
-			<div>
+			<div >
         <h1>Welcome to the Ride-and-Drive Event Database!</h1>
-				<h3>Here are the events in the database:</h3>
-        <div><EventList/></div>
-        <h3>Add Event</h3>
-        <div><EventForm /></div>
+				<h2>Here are the events in the database:</h2>
+				<div class="row">
+					<div class="col-12"><EventList/></div>
+					<h3 class="col-12"></h3>
+					<div class="col-12"><EventForm /></div>
+				</div>
 			</div>
 		)
 	}

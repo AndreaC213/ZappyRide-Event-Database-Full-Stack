@@ -36,6 +36,7 @@ class EventForm extends React.Component {
 		const { organizer, venue, eventdate } = this.state
 		return (
 			<div className="container">
+				<h3>Add Event</h3>
 				<form onSubmit={this.submitHandler}>
 					<div className="aligned_form">
 						<label for="text1">Organizer:</label>	
@@ -71,7 +72,7 @@ class EventForm extends React.Component {
 						className="customButton"
 						type="submit">
 							Submit
-						</button>
+					</button>
 				</form>
 			</div>
 		)
