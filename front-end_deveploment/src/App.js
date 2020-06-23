@@ -10,9 +10,9 @@ class App extends Component {
 			<div >
         <h1>Welcome to the Ride-and-Drive Event Database!</h1>
 				<h2>Here are the events in the database:</h2>
-				<div class="row">
-					<div class="row"><EventList/></div>
-					<div class="row"><EventForm /></div>
+				<div className="row">
+					<div className="row"><EventList/></div>
+					<div className="row"><EventForm /></div>
 				</div>
 			</div>
 		)

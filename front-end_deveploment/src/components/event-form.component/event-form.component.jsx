@@ -39,30 +39,27 @@ class EventForm extends React.Component {
 				<h3>Add Event</h3>
 				<form onSubmit={this.submitHandler}>
 					<div className="aligned_form">
-						<label for="text1">Organizer:</label>	
+						<label>Organizer:</label>	
 						<input
 							type="text"
-							id="text1"
 							name="organizer"
 							value={organizer}
 							onChange={this.changeHandler}
 						/>
 					</div>
 					<div className="aligned_form">
-						<label for="text1">Venue:</label>	
+						<label >Venue:</label>	
 						<input
 							type="text"
-							id="text2"
 							name="venue"
 							value={venue}
 							onChange={this.changeHandler}
 						/>
 					</div>
 					<div className="aligned_form">
-						<label for="text1">Eventdate:</label>	
+						<label>Eventdate:</label>	
 						<input
 							type="text"
-							id="text2"
 							name="eventdate"
 							value={eventdate}
 							onChange={this.changeHandler}
